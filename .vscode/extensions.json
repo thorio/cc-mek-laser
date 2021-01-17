@@ -6,7 +6,7 @@
 	"recommendations": [
 		"glavin001.unibeautify-vscode",
 		"philfontaine.autolaunch",
-		"sumneko.lua",
+		"yinfei.luahelper",
 		"lemmmy.computercraft-extension-pack",
 	],
 	// List of extensions recommended by VS Code that should not be recommended for users of this workspace.
