@@ -1,0 +1,16 @@
+{
+	"name": "cc-mek-laser",
+	"version": "1.0.0",
+	"description": "mekanism laser controller for computercraft",
+	"author": "thorou",
+	"license": "GPL-3.0",
+	"scripts": {
+		"build": "npx gulp build",
+		"clean": "npx gulp clean"
+	},
+	"devDependencies": {
+		"del": "^6.0.0",
+		"gulp": "^4.0.2",
+		"luabundle": "^1.6.0"
+	}
+}

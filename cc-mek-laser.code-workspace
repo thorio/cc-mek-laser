@@ -1,0 +1,8 @@
+{
+	"folders": [{
+		"path": "."
+	}],
+	"settings": {
+		"vscode-lua-format.configPath": "./.lua-format"
+	}
+}

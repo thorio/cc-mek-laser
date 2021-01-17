@@ -1,0 +1,13 @@
+{
+	"editor.defaultFormatter": "Glavin001.unibeautify-vscode",
+	"[lua]": {
+		"editor.defaultFormatter": "Koihik.vscode-lua-format",
+	},
+	"files.exclude": {
+		".github": true,
+		"build": true,
+		"node_modules": true,
+		"LICENSE": true,
+		"package-lock.json": true,
+	}
+}

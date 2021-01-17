@@ -1,0 +1,4 @@
+/node_modules
+*.code-workspace
+!cc-mek-laser.code-workspace
+/build
