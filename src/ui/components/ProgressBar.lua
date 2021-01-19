@@ -4,13 +4,20 @@ local ProgressBar = Component:extend()
 
 function ProgressBar:init(position, size, progressColor, backgroundColor)
 	Component.init(self, position, size)
-	self.progress = 0.5
+	self.progress = 0
 	self.progressColor = progressColor or colors.green
 	self.backgroundColor = backgroundColor or colors.gray
 end
 
 function ProgressBar:draw()
-	local splitPosition = self.position.x + math.floor(self.size.x * self.progress + 0.5)
+	-- hacky self update
+	-- // TODO remove
+	self.progress = self.progress + 0.01
+	if (self.progress > 1) then
+		self.progress = self.progress - 1
+	end
+
+	local splitPosition = self.position.x + math.floor(self.size.x * self.progress)
 	local bottomEdge = self.position.y + self.size.y
 	local endPosition = self.position.x + self.size.x
 
