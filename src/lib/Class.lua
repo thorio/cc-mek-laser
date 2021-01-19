@@ -1,4 +1,4 @@
-Class = {}
+local Class = {}
 
 -- default (empty) constructor
 function Class:init(...)
@@ -98,3 +98,5 @@ function Class:new(...)
 	end
 	return obj
 end
+
+return Class

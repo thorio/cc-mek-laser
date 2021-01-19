@@ -1,3 +1,5 @@
+local Class = require("lib.Class")
+
 local Renderer = Class:extend()
 
 function Renderer:init(canvas)
@@ -10,13 +12,13 @@ function Renderer:addComponent(component)
 	table.insert(self.components, component)
 end
 
-function Renderer:draw(force)
+function Renderer:render(force)
 	if (force) then
 		self.canvas:clear()
 	end
 
 	for i, value in ipairs(self.components) do
-		value:draw()
+		value:render()
 	end
 end
 

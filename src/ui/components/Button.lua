@@ -1,5 +1,6 @@
-local strings = require("utility.strings")
+local Class = require("lib.Class")
 local Component = require("ui.components.Component")
+local strings = require("utility.strings")
 
 local Button = Component:extend()
 

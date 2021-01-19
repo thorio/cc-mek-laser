@@ -1,3 +1,4 @@
+local Class = require("lib.Class")
 local strings = require("utility.strings")
 
 local Canvas = Class:extend()
