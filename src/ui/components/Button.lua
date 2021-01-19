@@ -12,11 +12,13 @@ function Button:init(text, position, size, textColor, backgroundColor)
 end
 
 function Button:draw()
-	local textHeight = self.position.y + math.floor(self.size.y / 2)
+	local textHeight = self.position.y + math.ceil(self.size.y / 2 + 0.1) - 1
+	local bottomLeftPoint = self.position + self.size
 	local text = strings.center(self.text, self.size.x)
 
-	self.canvas:rectangle(self.position, self.size, self.backgroundColor)
+	self.canvas:rectanglePoints(self.position, vector.new(bottomLeftPoint.x, textHeight), self.backgroundColor)
 	self.canvas:text(text, vector.new(self.position.x, textHeight), self.textColor, self.backgroundColor)
+	self.canvas:rectanglePoints(vector.new(self.position.x, textHeight + 1), bottomLeftPoint, self.backgroundColor)
 end
 
 return Button
