@@ -12,10 +12,7 @@ end
 function ProgressBar:draw()
 	-- hacky self update
 	-- // TODO remove
-	self.progress = self.progress + 0.01
-	if (self.progress > 1) then
-		self.progress = self.progress - 1
-	end
+	self.progress = os.clock() / 10 % 1
 
 	local splitPosition = self.position.x + math.floor(self.size.x * self.progress)
 	local bottomEdge = self.position.y + self.size.y

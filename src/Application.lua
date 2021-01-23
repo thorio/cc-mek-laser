@@ -7,8 +7,7 @@ local Application = Class:extend()
 
 function Application:init(terminal)
 	self._terminal = terminal
-	self._rootCanvas = Canvas(self._terminal)
-	self._renderer = Renderer(self._rootCanvas)
+	self._renderer = Renderer(Canvas(self._terminal))
 	self.framerate = 20
 end
 
@@ -17,11 +16,14 @@ function Application:addComponent(component)
 end
 
 function Application:start()
-	self._rootCanvas:clear()
 	while true do
-		self._renderer:render()
 		sleep(1 / self.framerate)
+		self._renderer:render()
 	end
+end
+
+function Application:loadScene(scene)
+	self._renderer:setScene(scene)
 end
 
 return Application
