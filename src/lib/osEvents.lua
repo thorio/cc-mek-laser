@@ -38,7 +38,6 @@ osEvents.turtleInventory = addDispatcher("turtle_inventory")
 
 function osEvents.run()
 	local function handleEvent(eventName, ...)
-		print(eventName, unpack(arg))
 		dispatchers[eventName]:dispatch(unpack(arg))
 	end
 
