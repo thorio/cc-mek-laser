@@ -1,4 +1,5 @@
 local Class = require("lib.Class")
+local meta = require("utility.meta")
 
 local EventDispatcher = Class:extend()
 
@@ -12,8 +13,13 @@ function EventDispatcher:dispatch(...)
 	end
 end
 
-function EventDispatcher:on(callback)
-	table.insert(self._callbacks, callback)
+function EventDispatcher:on(callback, optionalSelf)
+	local func = callback
+	if optionalSelf ~= nil then
+		func = meta.curry(callback, optionalSelf)
+	end
+
+	table.insert(self._callbacks, func)
 end
 
 function EventDispatcher:clear(callbackToClear)

@@ -1,4 +1,6 @@
 local Class = require("lib.Class")
+local EventDispatcher = require("lib.EventDispatcher")
+local collision = require("utility.collision")
 
 local Component = Class:extend()
 
@@ -7,6 +9,8 @@ function Component:init(position, size)
 	self.size = size or vector.new(5, 3)
 	self.canvas = nil
 	self.visible = true
+
+	self.clicked = EventDispatcher()
 end
 
 function Component:render()
@@ -21,6 +25,7 @@ end
 
 function Component:addTo(container)
 	container:addComponent(self)
+	return self
 end
 
 function Component:configure(configuration)
@@ -31,8 +36,8 @@ function Component:configure(configuration)
 	return self
 end
 
-function Component:__click()
-
+function Component:isPointInside(point)
+	return collision.pointInRect(point, self.position, self.size)
 end
 
 return Component
